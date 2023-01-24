@@ -1,5 +1,5 @@
 
-    import { Content } from "./content-interface";
+import { Content } from "./content-interface";
 
 export class ContentList {
 
@@ -8,13 +8,13 @@ export class ContentList {
   
     private _items:  Content[]; //private array of type Content
     
-    constructor(item: Content){
+    constructor(){
         this._items = [];
     }
 
-    increaseCount(){
+   /* increaseCount(){
         return ++ContentList.contentCount;
-    }
+    }*/
 
     // usage of getter function 
     getContent(): Content[] {
