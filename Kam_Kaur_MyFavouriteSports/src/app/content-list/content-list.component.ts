@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 // import { ContentList } from '../helper-files/content-list';
 
 import { Content } from '../helper-files/content-interface';
@@ -10,7 +10,7 @@ import { Content } from '../helper-files/content-interface';
 })
 export class ContentListComponent implements OnInit {
 	
-	content :Content[];
+	@Input() content :Content[];
 	
 	ngOnInit () {
 	 
