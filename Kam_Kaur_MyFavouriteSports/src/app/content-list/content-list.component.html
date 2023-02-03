@@ -1,13 +1,4 @@
-<p>content-list works!</p>
-<h1><u>Assignment 2</u></h1>
-<h2 *ngFor="let item of Content">
-    <div><p>{{item.id}}</p>
-    <p>{{item.title}}</p>
-    <p>{{item.description}}</p>
+<div *ngFor="let item of content.slice(0,6)">
+    <app-content-card [item] ="item" ></app-content-card>
     
-    <p>{{item.creator}}</p>
-    <img src={{item.imgURL}}>
-    <p>{{item.type}}</p></div>
-    
-
-</h2>
+ </div>
