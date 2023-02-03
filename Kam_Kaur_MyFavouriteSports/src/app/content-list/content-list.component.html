@@ -1,4 +1,5 @@
-<div *ngFor="let item of content.slice(0,6)">
+<!-- <div *ngFor="let item of content.slice(0,5)">
     <app-content-card [item] ="item" ></app-content-card>
     
- </div>
+ </div> -->
+ <app-content-card *ngFor="let item of content" [item]="item"></app-content-card>

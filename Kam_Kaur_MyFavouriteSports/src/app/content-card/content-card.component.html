@@ -1,15 +1,14 @@
-<!-- <div class="card" style="width: 18rem;"> 
-    <img src="{{item.imgURL}}" (click)="Onclick(item)" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">{{item.title}}</h5>
-      <p class="card-text">{{item.creator}}</p>
-      
-    </div>
-  </div>--><div class="card" style="width: 18rem;">
-        <img src="{{item.imgURL}}" on-click="Onclick(item)">
+
+  <div class="card" style="width: 18rem;" >
+        <span class="card-title" [innerHtml]="item.id" class="card-title"></span>   
+        <img src="{{item.imgURL}}" class="card-img-top" on-click="Onclick(item)" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">{{item.title}}</h5>
-          <p class="card-text">{{item.creator}}</p>
+          
+          <p class="card-text" [innerHtml]="item.title"></p>
+          <p class="card-text" [innerHtml]="item.description"></p>
+          <p class="card-text" [innerHtml]="item.creator"></p>
+          <p class="card-text" [innerHtml]="item.type"></p>
+          
           <!-- <span [innerHtml]="content.type"></span> -->
         </div>
       </div>
