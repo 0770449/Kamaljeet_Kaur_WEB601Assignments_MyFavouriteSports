@@ -1,1 +1,17 @@
-<p>content-card works!</p>
+<div [ngClass]="{'type1': item.type === 'hobbies', 'type2': item.type === 'video','type3':item.type===''}"></div>
+<div class="content-list">
+  <div class="card" style="width: 18rem;" >
+        <h1 class="card-title" [innerHtml]="item.id" class="card-title"></h1> 
+        <h2 class="card-header" [innerHtml]="item.title"></h2>  
+        <img src="{{item.imgURL}}" class="card-img-top" on-click="Onclick(item)" alt="Card image cap">
+        <div class="card-body">
+          
+          
+          <p class="card-text" [innerHtml]="item.description"></p>
+          <p class="card-text" [innerHtml]="item.creator"></p>
+          <p class="card-text" [innerHtml]="item.type"></p>
+          
+          <!-- <span [innerHtml]="content.type"></span> -->
+        </div>
+      </div>
+</div>      

@@ -1,0 +1,15 @@
+<style>
+    div{
+       text-align: center;
+       padding-left: 50px;
+       margin: 10px;
+       box-sizing: border-box;
+       display:inline-block;
+       }
+</style>
+<div *ngFor="let item of content.slice(0,5)">
+    <app-content-card [item] ="item" ></app-content-card>
+    
+ </div>
+
+ <!-- <app-content-card *ngFor="let item of content" [item]="item"></app-content-card> -->
