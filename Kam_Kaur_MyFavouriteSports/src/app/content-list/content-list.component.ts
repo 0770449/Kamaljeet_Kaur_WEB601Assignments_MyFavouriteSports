@@ -15,6 +15,15 @@ export class ContentListComponent implements OnInit {
 	ngOnInit () {
 	 
 	}
+	searchTitle:string | undefined;
+	exist=false;
+	message:string | undefined
+	mysearch()
+	{
+	 const FilterSearch= this.content.find(search=>search.title.toLowerCase()==this.searchTitle?.toLowerCase());
+	 this.exist=!!FilterSearch;
+	 this.message=this.exist? `Content with tilte "${this.searchTitle}"  exist`: `Content with tilte "${this.searchTitle}"  does not exist`
+	}
   constructor(){
   this.content = [{
 	id: 1,

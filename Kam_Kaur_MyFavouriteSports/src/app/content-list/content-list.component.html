@@ -1,15 +1,25 @@
-<style>
-    div{
-       text-align: center;
-       padding-left: 50px;
-       margin: 10px;
-       box-sizing: border-box;
-       display:inline-block;
-       }
-</style>
-<div *ngFor="let item of content.slice(0,5)">
-    <app-content-card [item] ="item" ></app-content-card>
-    
- </div>
 
- <!-- <app-content-card *ngFor="let item of content" [item]="item"></app-content-card> -->
+
+
+ <div class="search">
+    <input type="text" [(ngModel)]="searchTitle">
+    <button (click)="mysearch()">Search</button>
+  </div>
+  
+  <div *ngIf="message" [ngClass]="{'success': exist, 'error': !exist}">
+    {{message}}
+  </div>    
+  <h3>india</h3>
+  <div class="content-list-container">
+   
+
+      <app-content-card  *ngFor="let item of content | contentPipe:'India'"   [item]="item"  first as isFirst [class.isFirst]="true"></app-content-card> 
+    </div>
+  <h3>canada</h3>
+    <div class="content-list-container">
+      <app-content-card *ngFor="let item of content | contentPipe:'canada'" [item]="item" ></app-content-card>
+    </div>
+    <h3>Empty</h3>
+    <div class="content-list-container">
+      <app-content-card *ngFor="let item of content | contentPipe:''" [item]="item" ></app-content-card>
+    </div>
