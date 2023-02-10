@@ -10,13 +10,13 @@
     {{message}}
   </div><br> <br><br>   
   <h3>India's Games</h3>
-  <div class="content-list-container">
+  <div class="india">
    
 
       <app-content-card  *ngFor="let item of content | contentPipe:'india'"   [item]="item"  first as isFirst [class.isFirst]="true"></app-content-card> 
     </div>
   <h3>Canada's Games</h3>
-    <div class="content-list-container">
+    <div class="canada">
       <app-content-card *ngFor="let item of content | contentPipe:'canada'" [item]="item" ></app-content-card>
     </div>
     <h3>No classification</h3>
