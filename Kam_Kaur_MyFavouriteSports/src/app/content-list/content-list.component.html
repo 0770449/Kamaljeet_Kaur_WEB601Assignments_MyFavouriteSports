@@ -1,25 +1,25 @@
 
+<form>
+  <label>Enter title: </label>
+    <input type="text" class="inputvalue" [(ngModel)]="searchTitle" name="title">
+    <button type="button" class="button" (click)="mysearch()">Search</button>
+</form>
 
-
- <div class="search">
-    <input type="text" [(ngModel)]="searchTitle">
-    <button (click)="mysearch()">Search</button>
-  </div>
-  
+ 
   <div *ngIf="message" [ngClass]="{'success': exist, 'error': !exist}">
     {{message}}
-  </div>    
-  <h3>india</h3>
+  </div><br> <br><br>   
+  <h3>India's Games</h3>
   <div class="content-list-container">
    
 
-      <app-content-card  *ngFor="let item of content | contentPipe:'India'"   [item]="item"  first as isFirst [class.isFirst]="true"></app-content-card> 
+      <app-content-card  *ngFor="let item of content | contentPipe:'india'"   [item]="item"  first as isFirst [class.isFirst]="true"></app-content-card> 
     </div>
-  <h3>canada</h3>
+  <h3>Canada's Games</h3>
     <div class="content-list-container">
       <app-content-card *ngFor="let item of content | contentPipe:'canada'" [item]="item" ></app-content-card>
     </div>
-    <h3>Empty</h3>
+    <h3>No classification</h3>
     <div class="content-list-container">
       <app-content-card *ngFor="let item of content | contentPipe:''" [item]="item" ></app-content-card>
     </div>

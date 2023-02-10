@@ -1,3 +1,24 @@
-.isFirst{
-    border: solid 2px green;
+div{
+    width: 500px;
+    padding: 40px;
+    border: 1px solid black;
 }
+.isFirst{
+        border: 1px solid black;
+       }
+.success {
+    color: green;
+  }
+
+form {
+   justify-content: center;
+   margin-left: 25px; 
+  }
+  .content-list-container {
+
+    display: flex;
+    flex-wrap: wrap;
+     }
+.error {
+    color: red;
+  }

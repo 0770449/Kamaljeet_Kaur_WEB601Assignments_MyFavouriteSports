@@ -31,7 +31,7 @@ export class ContentListComponent implements OnInit {
 	 description: 'Kabaddi is basically a combative sport, with seven players on each side;',
 	 creator: 'Ashish Pachori from India',
 	 imgURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNyjf43RIPUVP4Q-jnA3LgHnyz4wg1RUDCFg9ogsyAVw&s',
-	 type: 'National level',
+	 type: 'india',
  },
  
  {
@@ -57,7 +57,7 @@ export class ContentListComponent implements OnInit {
 	 description: 'Badminton is a racquet sport played using racquets to hit a shuttlecock across a net. Although it may be played with larger teams, the most common forms of ...',
 	 creator: 'Ashish Kumar',
 	 imgURL: 'https://www.completesports.com/wp-content/uploads/Badminton.jpg',
-	 type: 'National level',
+	 type: 'canada',
  },
  
  {
