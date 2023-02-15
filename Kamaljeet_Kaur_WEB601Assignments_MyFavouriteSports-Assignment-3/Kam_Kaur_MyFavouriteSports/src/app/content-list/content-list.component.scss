@@ -1,0 +1,33 @@
+div{
+    width: 500px;
+    padding: 40px;
+    border: 1px solid black;
+    display: inline-block;
+}
+.isFirst{
+        border: 1px solid black;
+       }
+.success {
+    color: green;
+  }
+
+form {
+   justify-content: center;
+   margin-left: 25px; 
+  }
+  .content-list-container {
+    background-color: aqua;
+    display: flex;
+    flex-wrap: wrap;
+     }
+     .india{
+        background-color: rgb(17, 209, 43);
+        color:darkred;
+     }
+     .canada{
+        background-color: rgb(233, 165, 224);
+        color:green; 
+     }
+.error {
+    color: red;
+  }
