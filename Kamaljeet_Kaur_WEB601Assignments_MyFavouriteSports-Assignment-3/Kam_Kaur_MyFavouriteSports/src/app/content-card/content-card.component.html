@@ -14,8 +14,13 @@
           <p class="card-text"  [innerHtml]="item.description"></p>
           <p class="card-text"  [innerHtml]="item.creator"></p>
           <p class="card-text"appHoverAffect hoverAffect="underline" [innerHtml]="item.type"></p>
-          <div>Tag:<ul class="card-text">
-            <span *ngFor="let tag of item?.tags"><li appHoverAffect hoverAffect="bold">#{{tag}}</li></span></ul></div>
+          <div>Tag:
+            <ul class="card-text">
+            <span *ngFor="let tag of item?.tags">
+              <li appHoverAffect hoverAffect="bold">#{{tag}}</li>
+            </span>
+          </ul>
+        </div>
          
 
           
