@@ -9,6 +9,9 @@ import { Content } from '../helper-files/content-interface';
 	styleUrls: ['./content-card.component.scss']
 })
 export class ContentCardComponent implements OnInit {
+	@Input() isFirst: boolean = false;
+    @Input() isLast: boolean = false; 
+	Default:string='assets/img/download.jpeg'
 	@Input() item: any;
 	
 	public Onclick(content: any) {
