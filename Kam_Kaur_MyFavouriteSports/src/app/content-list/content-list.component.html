@@ -1,4 +1,7 @@
-
+<div class="create">
+  <app-create-content ></app-create-content>
+  <!-- <div *ngIf="failureMsg != ''" [innerHTML]="failureMsg" class="failure"></div> -->
+</div>
 <form>
   <label>Enter title: </label>
     <input type="text" class="inputvalue" [(ngModel)]="searchTitle" name="title">
