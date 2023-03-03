@@ -11,6 +11,7 @@ import { Content } from '../helper-files/content-interface';
 export class ContentListComponent implements OnInit {
 	
 	@Input() content :Content[];
+	failureMsg: any;
 	
 	ngOnInit () {
 	 
@@ -24,6 +25,10 @@ export class ContentListComponent implements OnInit {
 	 this.exist=!!FilterSearch;
 	 this.message=this.exist? `Content with tilte "${this.searchTitle}"  exist`: `Content with tilte "${this.searchTitle}"  does not exist`
 	}
+	createBoard() {
+		// function body
+	  }
+
   constructor(){
   this.content = [{
 	id: 1,
@@ -95,10 +100,48 @@ export class ContentListComponent implements OnInit {
 	 tags: ['game', 'outdoor game']
 }
 ]
-
-
- 
 }
 
+addBoardToList(newBoardFromChild: Content) {
+    console.log(this.failureMsg);
+    let promise = new Promise((success, failure) => {
+      if ((
+        newBoardFromChild.id ||
+        newBoardFromChild.title ||
+        newBoardFromChild.description ||
+        newBoardFromChild.creator != "")) {
+          this.failureMsg = "";
+          success(
+            `New list:
+              Title: ${newBoardFromChild.title},
+              ID: ${newBoardFromChild.id},
+              Description: ${newBoardFromChild.description},
+              Creator: ${newBoardFromChild.creator},
+              Image URL: ${newBoardFromChild.imgURL},
+              Type: ${newBoardFromChild.type},
+              Tags: ${newBoardFromChild.tags}`);
+        } else {
+          failure("An error has occurred while adding new board.");
+          this.failureMsg = "An error has occurred while adding new board.";
+        }
+    });
+
+    promise
+      .then((successMsg) => console.log(successMsg))
+	  .then((successMsg) => console.log("Addition is successful"))
+      .catch((errorMsg) => this.failureMsg = errorMsg);
+
+    if(this.failureMsg != "") {
+      return;
+
+    } else {
+      console.log('Previous board list: ', this.content);
+      this.content.push(newBoardFromChild);
+      this.content = [...this.content];
+      console.log("Board to be added to list: ", newBoardFromChild);
+      console.log("New board list: ", this.content);
+    }
+  }
 }
+
 

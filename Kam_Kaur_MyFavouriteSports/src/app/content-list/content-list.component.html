@@ -1,8 +1,8 @@
 <div class="create">
-  <app-create-content ></app-create-content>
-  <!-- <div *ngIf="failureMsg != ''" [innerHTML]="failureMsg" class="failure"></div> -->
+  <app-create-content (newBoardEvent)="addBoardToList($event)"></app-create-content>
+  <div *ngIf="failureMsg != ''" [innerHTML]="failureMsg" class="failure"></div>
 </div>
-<form>
+ <form> 
   <label>Enter title: </label>
     <input type="text" class="inputvalue" [(ngModel)]="searchTitle" name="title">
     <button type="button" class="button" (click)="mysearch()">Search</button>
@@ -25,4 +25,4 @@
     <h3>No classification</h3>
     <div class="content-list-container">
       <app-content-card *ngFor="let item of content | contentPipe:''" [item]="item" ></app-content-card>
-    </div>
+    </div> 

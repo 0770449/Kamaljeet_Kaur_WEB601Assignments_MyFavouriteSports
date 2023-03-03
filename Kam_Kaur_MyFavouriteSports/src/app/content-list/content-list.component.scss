@@ -3,6 +3,10 @@ div{
     padding: 40px;
     border: 1px solid black;
     display: inline-block;
+    margin-left:250px;
+    margin-top: 100px;
+    border-radius: 4px;
+  box-sizing: border-box;
 }
 .isFirst{
         border: 1px solid black;
@@ -31,3 +35,8 @@ form {
 .error {
     color: red;
   }
+  .create{ display: inline-block;}
+
+  .failure{display: flex;
+margin-left: -10px;
+width:400px;}
