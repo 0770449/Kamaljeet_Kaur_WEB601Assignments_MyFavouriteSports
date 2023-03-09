@@ -13,7 +13,7 @@ export class AppMessagesComponent {
   constructor(private messageService: MessagesService) { }
 
   ngOnInit(): void {
-    this.messageService.messages.subscribe((message: string) => {
+    this.messageService.messages$.subscribe((message: string) => {
       this.messages=[];
       this.messages.push(message);
     });
