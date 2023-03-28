@@ -11,28 +11,44 @@ import { MyFavouriteSportsService } from '../services/my-favourite-sports.servic
   styleUrls: ['./content-list.component.scss']
 })
 export class ContentListComponent implements OnInit {
-	
-	content :Content[]=[];
-	
+	content:Content[]=[];
 	ngOnInit(): void {
-		this.contentService.getSports().subscribe((content: Content[]) => {
-		  this.content = content;
-		});
-	  }
-	 
-	  constructor(private contentService: MyFavouriteSportsService)
-	  {
-		
-	  }
+	  this.gethobbies();
+	}
+	gethobbies()
+	{
+	  this.contentService.getContent().subscribe(content => {
+		this.content = content;
+		this.messageService.addMessage('Content array loaded!');
+		console.log(this.content)
+	  });
+	}
+	onContentAdded(newContent: Content) {
+	  debugger
+	  this.contentService.addcontent(newContent).subscribe(con=>{
+		this.gethobbies();
+		this.messageService.addMessage('New content has been added');
+	  });
+	  
+	}
+	constructor(private contentService: MyFavouriteSportsService,private messageService: MessagesService)
+	{
+	  
+	}
 	searchTitle:string | undefined;
 	exist=false;
 	message:string | undefined
 	mysearch()
 	{
-	 const FilterSearch= this.content.find(search=>search.title.toLowerCase()==this.searchTitle?.toLowerCase());
-	 this.exist=!!FilterSearch;
+	 const contentSearch= this.content.find(search=>search.title.toLowerCase()==this.searchTitle?.toLowerCase());
+	 this.exist=!!contentSearch;
 	 this.message=this.exist? `Content with tilte "${this.searchTitle}"  exist`: `Content with tilte "${this.searchTitle}"  does not exist`
 	}
-
-}
-
+  
+  
+   
+  
+  
+  
+  
+  }
