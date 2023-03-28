@@ -1,1 +1,42 @@
-<p>content-card works!</p>
+<div [ngClass]="{'type1': item.type === 'canada', 'type2': item.type === 'india','type3':item.type===''}"></div>
+<div class="content-list">
+  <div class="card" style="width: 18rem;" >
+        <h1 class="card-title" [innerHtml]="item.id" class="card-title"></h1> 
+        <h2 class="card-header" [innerHtml]="item.title"></h2>  
+       <!--  <h1 class="card-title" appHoverAffect hoverAffect="bold" [innerHtml]="item.id"></h1>
+        <h2 class="card-header" appHoverAffect hoverAffect="bold" [innerHtml]="item.title"></h2> -->
+       <!-- <img src="{{item.imgURL}}" class="card-img-top" (click)="Onclick(item)" alt="Card image cap"> -->
+       <div [ngSwitch]="item.imgURL">
+        <img   *ngSwitchCase="''" src="{{Default}}" (click)="Onclick(item)" class="card-img-top" alt="...">
+        <img   *ngSwitchDefault src="{{item.imgURL}}" (click)="Onclick(item)" class="card-img-top" alt="...">
+       </div>
+       <div class="card-body">
+          <p class="card-text"  [innerHtml]="item.description"></p>
+          <p class="card-text"  [innerHtml]="item.creator"></p>
+          <p class="card-text"appHoverAffect hoverAffect="underline" [innerHtml]="item.type"></p>
+          <div>Tag:
+            <ul class="card-text">
+            <span *ngFor="let tag of item?.tags">
+              <li appHoverAffect hoverAffect="bold">#{{tag}}</li>
+            </span>
+          </ul>
+        </div>
+         
+
+          
+          
+          <!-- <p *ngIf="item?.tags  && (isFirst || isLast)">
+            Tag: <span  apphoverAffect="boldandborder"   [ngClass]="{'india': item.type == 'game',
+                                         'canada': item.type == 'outdoor',
+                                    '': item.type == null}" *ngFor="let tag of item?.tags ; first as isFirst; last as isLast">{{tag}}</span></p>
+      
+           <p *ngIf="item?.tags  && (isFirst || isLast)">
+            Tag: <span  apphoverAffect="bold"   [ngClass]="{'india': item.type == 'game',
+                                         'canada': item.type == 'outdoor',
+                                    '': item.type == null}" *ngFor="let tag of item?.tags ; first as isFirst; last as isLast">{{tag}}</span></p>
+                                
+          -->
+          <!-- <span [innerHtml]="content.type"></span> -->
+        </div>
+      </div>
+</div>      
