@@ -1,0 +1,32 @@
+
+  
+    form {
+        display: flex;
+        flex-direction: column;
+        border-radius: 1rem;
+        margin-left:20px ;
+    }
+    
+    input,
+    select,textarea {
+      width: 100%;
+      padding: 15px 20px;
+      margin: 8px 0;
+      border: 1px solid #000000;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+   
+    
+    button {
+      width: 50%;
+      background-color: #4c82af;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    

@@ -33,7 +33,7 @@ export class AppComponent {
       return;
     }
     debugger
-    this.contentService.getSports().subscribe(content => {
+   /* this.contentService.getSports().subscribe((content: string | any[]) => {
       if (idNumber > content.length) {
         this.errorMessage = 'Invalid ID number entered';
         this.messageService.addMessageService(this.errorMessage);
@@ -55,8 +55,8 @@ export class AppComponent {
 
     // Use the content service to retrieve the content card with the given ID
     
+  }*/
   }
-
 
 }
 

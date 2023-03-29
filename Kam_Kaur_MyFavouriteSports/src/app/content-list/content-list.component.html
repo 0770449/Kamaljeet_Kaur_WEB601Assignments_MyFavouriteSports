@@ -1,5 +1,5 @@
 <h1>Content list component</h1>
-<app-modify-content-component (contentAdded)="onContentAdded($event)"></app-modify-content-component>
+<app-modify-content-component (contentAdded)="ContentAdded($event)"></app-modify-content-component>
 
 
 <form>
@@ -7,17 +7,16 @@
     <input type="text" class="inputvalue" [(ngModel)]="searchTitle" name="title">
     <button type="button" class="button" (click)="mysearch()">Search</button>
 </form>
-
- 
-  <div *ngIf="message" [ngClass]="{'success': exist, 'error': !exist}">
+<div *ngIf="message" [ngClass]="{'success': exist, 'error': !exist}">
     {{message}}
   </div><br> <br><br>   
+  
+  
   <h3>India's Games</h3>
   <div class="india">
-   
-
-      <app-content-card  *ngFor="let item of content | contentPipe:'india'"   [item]="item"  ></app-content-card> 
-    </div>
+    <app-content-card  *ngFor="let item of content | contentPipe:'india'"   [item]="item"  ></app-content-card> 
+  </div>
+  
   <h3>Canada's Games</h3>
     <div class="canada">
       <app-content-card *ngFor="let item of content | contentPipe:'canada'" [item]="item" ></app-content-card>

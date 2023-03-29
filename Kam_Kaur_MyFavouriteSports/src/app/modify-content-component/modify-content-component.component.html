@@ -1,7 +1,4 @@
-<div class="container mt-5">
-    <div class="card bg-light">
-      <div class="card-body">
-        <form>
+<form>
           <!-- <div class="form-group">
             <label for="idInput">ID:</label>
             <input type="number" [(ngModel)]="idInput" name="idInput" class="form-control" >
@@ -23,12 +20,11 @@
             <label>Type:</label>
             <input [(ngModel)]="type"  name= "type" type="text" class="form-control" />
           </div>
+          <br>
           <div class="form-group">
           <label for="tag">Tag :</label>
-          <input type="text" id="tag" name="tag" placeholder="Tag A, Tag B">
-          </div>
+          <input type="text" id="tag" name="tag" [(ngModel)]="tags" placeholder="Tag A, Tag B">
+          </div><br><br>
           <button class="btn btn-primary" (click)="addContent()">Add to the list</button>
         </form>
-      </div>
-    </div>
-  </div>
+      

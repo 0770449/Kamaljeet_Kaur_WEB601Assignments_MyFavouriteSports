@@ -15,6 +15,7 @@ export class ModifyContentComponentComponent {
   creater: string ="";
   type: string ="";
   idInput:any;
+  tags:any
   constructor(private contentService:MyFavouriteSportsService ,private messageService: MessagesService)
   {
     
@@ -27,16 +28,15 @@ export class ModifyContentComponentComponent {
     {
       //update content
       const updatedContent: Content = {
-        id: this.idInput,
         title: this.title,
         description: this.description,
         creator: this.creater,
-        type:this.type
+        type: this.type,
+        tags: this.tags,
+        id: 0
       };
-      this.contentService.updateHero(updatedContent).subscribe(() => {
-        this.messageService.addMessage(`Content ${updatedContent.id} updated successfully`);
-        // this.clearInputs();
-       // this.addUpdateButtonText = 'Add Content';
+      this.contentService.updateSports(updatedContent).subscribe(() => {
+        this.messageService.addMessageService(`Content ${updatedContent.id} updated successfully`);
         this.contentAdded.emit(updatedContent);
       });
     }
@@ -47,10 +47,10 @@ export class ModifyContentComponentComponent {
         description: this.description,
         creator: this.creater,
         type: this.type,
-        id: 0
+        id: 0,
+        tags:this.tags
       };
-         
-    this.contentAdded.emit(newContent);
+         this.contentAdded.emit(newContent);
     }
     
 
@@ -58,6 +58,7 @@ export class ModifyContentComponentComponent {
     this.description = '';
     this.creater = '';
     this.type = '';
+    this.tags='';
   }
 }
 

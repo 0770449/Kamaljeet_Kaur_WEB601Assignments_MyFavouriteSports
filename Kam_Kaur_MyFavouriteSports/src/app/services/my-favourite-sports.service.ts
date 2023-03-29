@@ -24,14 +24,14 @@ export class MyFavouriteSportsService {
   
   getContent() : Observable<Content[]> {
 		// return of(contentList);
-		return this.http.get<Content[]>('api/content');
+		return this.http.get<Content[]>('api/Content');
 	}
-  updateHero(content:any) {
-    return this.http.put(`/api/contentDb/${content.id}`, content);
+  updateSports(content:any) {
+    return this.http.put(`/api/Content/${content.id}`, content);
   }
   addcontent(content:any) {
   
-    return this.http.post('api/contentDb', content);
+    return this.http.post('api/Content', content);
   }
 }
 

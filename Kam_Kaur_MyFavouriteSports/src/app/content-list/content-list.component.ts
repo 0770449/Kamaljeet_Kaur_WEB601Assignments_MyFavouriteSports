@@ -13,21 +13,21 @@ import { MyFavouriteSportsService } from '../services/my-favourite-sports.servic
 export class ContentListComponent implements OnInit {
 	content:Content[]=[];
 	ngOnInit(): void {
-	  this.gethobbies();
+	  this.getsports();
 	}
-	gethobbies()
+	getsports()
 	{
 	  this.contentService.getContent().subscribe(content => {
 		this.content = content;
-		this.messageService.addMessage('Content array loaded!');
+		this.messageService.addMessageService('Content array loaded!');
 		console.log(this.content)
 	  });
 	}
-	onContentAdded(newContent: Content) {
+	ContentAdded(newContent: Content) {
 	  debugger
 	  this.contentService.addcontent(newContent).subscribe(con=>{
-		this.gethobbies();
-		this.messageService.addMessage('New content has been added');
+		this.getsports();
+		this.messageService.addMessageService('New content has been added');
 	  });
 	  
 	}
