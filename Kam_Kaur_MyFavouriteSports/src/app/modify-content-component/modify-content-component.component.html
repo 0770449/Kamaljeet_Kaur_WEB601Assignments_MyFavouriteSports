@@ -1,0 +1,30 @@
+<form>
+          <!-- <div class="form-group">
+            <label for="idInput">ID:</label>
+            <input type="number" [(ngModel)]="idInput" name="idInput" class="form-control" >
+          </div> -->
+            
+          <div class="form-group">
+            <label>Title:</label>
+            <input [(ngModel)]="title" type="text" name="title" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label>Description:</label>
+            <textarea [(ngModel)]="description" name="description" class="form-control"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Creater:</label>
+            <input [(ngModel)]="creater" type="text" name="creater" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label>Type:</label>
+            <input [(ngModel)]="type"  name= "type" type="text" class="form-control" />
+          </div>
+          <br>
+          <div class="form-group">
+          <label for="tag">Tag :</label>
+          <input type="text" id="tag" name="tag" [(ngModel)]="tags" placeholder="Tag A, Tag B">
+          </div><br><br>
+          <button class="btn btn-primary" (click)="addContent()">Add to the list</button>
+        </form>
+      
