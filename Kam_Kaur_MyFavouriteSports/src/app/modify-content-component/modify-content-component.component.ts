@@ -2,6 +2,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { MessagesService } from '../services/messages.service';
 import { Content } from '../helper-files/content-interface';
 import { MyFavouriteSportsService } from '../services/my-favourite-sports.service';
+import { DialogComponent } from '../dialog/dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 // import { MyFavouriteSportsService } from '../service/my-favourite-sports.service';
 
 @Component({
@@ -10,30 +12,45 @@ import { MyFavouriteSportsService } from '../services/my-favourite-sports.servic
   styleUrls: ['./modify-content-component.component.scss']
 })
 export class ModifyContentComponentComponent {
-  title: string ="";
-  description: string=""
-  creater: string ="";
-  type: string ="";
-  idInput:any;
-  tags:any
-  constructor(private contentService:MyFavouriteSportsService ,private messageService: MessagesService)
+ 
+  constructor(private contentService:MyFavouriteSportsService ,private messageService: MessagesService,private dialog: MatDialog)
   {
     
   }
 
+  // @Output() contentAdded = new EventEmitter<Content>();
   @Output() contentAdded = new EventEmitter<Content>();
-  addContent() {
+
+
+  openDialog()
+  {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      width: '800px',
+      height: '650px',
+      data: {}
+        
+    });
+    dialogRef.afterClosed().subscribe(result=> {
+      debugger
+      console.log(`Dialog result: ${result}`);
+      this.addContent(result)
+    });
+  }
+
+  addContent(content: { id: null; title: any; description: any; creater: any; type: any; tags: any; }) {
+    console.log(content)
     debugger
-    if(this.idInput)
+    if(content.id!=null)
     {
       //update content
       const updatedContent: Content = {
-        title: this.title,
-        description: this.description,
-        creator: this.creater,
-        type: this.type,
-        tags: this.tags,
-        id: 0
+        id: content.id,
+        title: content.title,
+        description: content.description,
+        creator: content.creater,
+        type: content.type,
+        tags: content.tags,
+        
       };
       this.contentService.updateSports(updatedContent).subscribe(() => {
         this.messageService.addMessageService(`Content ${updatedContent.id} updated successfully`);
@@ -43,22 +60,29 @@ export class ModifyContentComponentComponent {
     else
     {
       const newContent: Content = {
-        title: this.title,
-        description: this.description,
-        creator: this.creater,
-        type: this.type,
-        id: 0,
-        tags:this.tags
+        
+        id: null,
+        title: content.title,
+        description: content.description,
+        creator: content.creater,
+        type: content.type,
+       
+        tags:content.tags
       };
          this.contentAdded.emit(newContent);
     }
     
 
-    this.title = '';
-    this.description = '';
-    this.creater = '';
-    this.type = '';
-    this.tags='';
-  }
+  //   this.title = '';
+  //   this.description = '';
+  //   this.creater = '';
+  //   this.type = '';
+  //   this.tags='';
+  // }
 }
 
+
+}
+function closeDialog() {
+  throw new Error('Function can not be implememnted.');
+}

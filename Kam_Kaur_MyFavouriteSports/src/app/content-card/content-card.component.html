@@ -1,8 +1,13 @@
+
+<mat-card>
+  <mat-card-content>
+
+
 <div [ngClass]="{'type1': item.type === 'canada', 'type2': item.type === 'india','type3':item.type===''}"></div>
 <div class="content-list">
   <div class="card" style="width: 18rem;" >
-        <h1 class="card-title" [innerHtml]="item.id" class="card-title"></h1> 
-        <h2 class="card-header" [innerHtml]="item.title"></h2>  
+    <mat-card-title class="card-title" [innerHtml]="item.id" class="card-title"></mat-card-title>
+        <mat-card-header> <h2 class="card-header" [innerHtml]="item.title"></h2>  </mat-card-header>
        <!--  <h1 class="card-title" appHoverAffect hoverAffect="bold" [innerHtml]="item.id"></h1>
         <h2 class="card-header" appHoverAffect hoverAffect="bold" [innerHtml]="item.title"></h2> -->
        <!-- <img src="{{item.imgURL}}" class="card-img-top" (click)="Onclick(item)" alt="Card image cap"> -->
@@ -39,4 +44,4 @@
           <!-- <span [innerHtml]="content.type"></span> -->
         </div>
       </div>
-</div>      
+</div></mat-card-content></mat-card>

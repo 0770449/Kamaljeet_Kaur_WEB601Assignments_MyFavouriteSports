@@ -9,6 +9,9 @@ import { MessagesService } from './messages.service';
   providedIn: 'root'
 })
 export class MyFavouriteSportsService {
+  sportsHero(updatedContent: Content) {
+    throw new Error('Method not implemented.');
+  }
   getSports() {
     throw new Error('Method not implemented.');
   }
