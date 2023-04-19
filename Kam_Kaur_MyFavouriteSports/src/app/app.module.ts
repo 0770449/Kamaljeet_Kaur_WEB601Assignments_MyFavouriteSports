@@ -19,6 +19,15 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { NotfoundComponent } from './notfound/notfound.component';
+
+const routes: Routes = [
+  { path: '', redirectTo: '/list', pathMatch: 'full' },
+  { path: 'list', component: ContentListComponent },
+  { path: 'detail/:id', component: ContentDetailComponent },
+  { path: '**', component: NotfoundComponent },
+];
+
 
 @NgModule({
   declarations: [
@@ -32,6 +41,7 @@ import { ContentDetailComponent } from './content-detail/content-detail.componen
    
     DialogComponent,
         ContentDetailComponent,
+        NotfoundComponent,
     
   ],
   imports: [
