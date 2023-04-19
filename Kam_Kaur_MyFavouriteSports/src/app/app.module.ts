@@ -19,7 +19,18 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { RouterModule, Routes } from '@angular/router';
 import { NotfoundComponent } from './notfound/notfound.component';
+
+
+
+
+
+
+
+
+
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/list', pathMatch: 'full' },
@@ -41,12 +52,12 @@ const routes: Routes = [
    
     DialogComponent,
         ContentDetailComponent,
-        NotfoundComponent,
     
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    RouterModule.forRoot(routes),
     HttpClientModule,
     InMemoryWebApiModule.forRoot(MyDataService),
     BrowserAnimationsModule,

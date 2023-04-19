@@ -5,9 +5,6 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class MessagesService {
-  addMessage(arg0: string) {
-    throw new Error('Method not implemented.');
-  }
  
 
   private messages = new Subject<string>();
