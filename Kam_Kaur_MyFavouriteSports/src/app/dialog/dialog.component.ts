@@ -26,7 +26,7 @@ export class DialogComponent {
   }
   
     addContent() {
-      debugger
+      
       if(this.idInput>0)
       {
         //update content
