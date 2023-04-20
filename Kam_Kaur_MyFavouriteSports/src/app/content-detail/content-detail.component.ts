@@ -20,7 +20,7 @@ export class ContentDetailComponent {
   ngOnInit(): void {
     debugger
     this.id = Number(this.route.snapshot.paramMap.get('id'));
-    this.myFavouriteSportsService.getContent(this.id).subscribe((content) => {
+    this.myFavouriteSportsService.getContentById(this.id).subscribe((content) => {
       this.content = content;
       console.log(this.content);
       this.messageService.addMessageService(`Content ID: ${this.content.id} - ${this.content.title}`);
