@@ -1,9 +1,10 @@
 {
   "name": "kam-kaur-my-favourite-sports",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "http-server -p 8080 -c-1 dist/kam-kaur-my-favourite-sports",
+    "start:server": "http-server -p 8080 -c-1 dist/kam-kaur-my-favourite-sports",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
